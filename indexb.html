@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+	
+	<title></title>
+	
+	<style>
+	
+	.circle {
+		width: 200px;
+		height: 200px;
+		border-radius: 100px;
+		background-color: blue;
+		position: absolute;
+	}
+	
+	#red {
+		background-color: red;
+		
+	}
+	
+	
+	</style>
+	
+	</head>
+	
+	<body>
+		<div id="points">
+		</div>
+	
+	
+		<div class="circle" id="red">
+		
+		</div>
+		
+		<div class="circle blue">
+		
+		</div>
+		
+		<div class="circle blue">
+		
+		</div>
+		
+		<script>
+		
+			var circles = document.getElementsByClassName("circle");
+			
+			setInterval(moveCircles, 1000);
+			var points_div = document.getElementById("points");
+			
+			var points = 0;
+			
+			function moveCircles(){
+			
+				for(var counter = 0; counter < circles.length; counter++){
+					var circle = circles[counter]; 
+					
+					var random_x = Math.floor(Math.random() * 100);
+					random_x = random_x + "%";
+					
+					var random_y = Math.floor(Math.random() * 100);
+					random_y = random_y + "%";
+					
+					circle.style.top = random_y;
+					circle.style.right = random_x;
+				}
+			}
+			
+			for(var counter = 0; counter < circles.length; counter++){
+				var circle = circles[counter];
+				
+				circle.addEventListener('click', addPoints);	
+			}
+			
+			function addPoints(){
+				points = points + 10;
+				
+				points_div.innerHTML = points;
+				
+			}
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			
+			
+		
+		
+		
+		</script>
+		
+	
+	
+	
+	
+	<script>
+	
+	
+	</script>
+	
+	</body>
+	
+</html>
